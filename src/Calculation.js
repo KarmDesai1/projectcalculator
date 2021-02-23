@@ -1,4 +1,0 @@
-
-class Calculator{
-    static calculation
-}
