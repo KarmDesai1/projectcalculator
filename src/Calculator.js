@@ -1,4 +1,4 @@
-const Calculation = require('./models/Calcualtion');
+const Calculation = require('./Operations/models/Calculations');
 const Sum = require('Operations/Add');
 const Difference = require('Operations/Subtract');
 const Quotient = require('Operations/Divide');
@@ -16,7 +16,7 @@ class Calculator {
     static Difference(a,b) {
         let calculation = new Calculation(a,b,Difference);
         Calculator.Calculations.push(calculation);
-        return calculation.GetResult();
+        return calculation.GetResults();
     }
     static Product(a,b) {
         let calculation = new Calculation(a,b,Product);
@@ -34,7 +34,6 @@ class Calculator {
         return calculation.GetResults();
     }
     static SquareRT(a,b) {
-        //this is how you create a new object and this is good for data and actions
         let calculation = new Calculation(a,b,SquareRT);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
