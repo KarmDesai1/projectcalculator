@@ -1,26 +1,36 @@
 const Calculator = require('../src/Calculator');
 
-test('Calculator Divide 4 by 2 to equal 2', () => {
-    let calc = new Calculation();
-    let result = calc.Divide(4,2);
+test('Calculator Add 4 by 2 to equal 6', () => {
+    let result = Calculator.Add(4,2);
+    expect(result).toBe(6);
+});
+test('Calculate the difference between 4 and 4', () => {
+    let result = Calculator.Subtract(4,2);
     expect(result).toBe(2);
-    expect(calc.Result).toBe(2);
 });
-test('Calculator Add 7 by 7 to equal 14', () => {
-    let calc = new Calculator();
-    expect(calc.Add(7,7)).toBe(14);
-    expect(calc.Result.toBe(14));
-});
-test('Calculator Multiply 2 by 4', () => {
-    let calc = new Calculator();
-    expect(calc.Multiply(2,4)).toBe(8);
-    expect(calc.Result).toBe(8);
-});
-test('Calculator  add array of 5,6,7,8 and get Result 26', () => {
-    let calc = new Calculator();
-    let myArray = [5,6,7,8];
-    expect(calc.Add(myArray)).toBe(26);
-    expect(calc.Result).toBe(26);
-})
 
+test('Calculator Multiply 2 by 4', () => {
+    let result = Calculator.Multiply(4,2);
+    expect(result).toBe(8);
+});
+
+test('Calculator Divide 4 by 2 to equal 2', () => {
+    let result = Calculator.Divide(4,2);
+    expect(result).toBe(2);
+});
+
+test('Calculator squaring a number', () => {
+    let result = Calculator.Square(4,null);
+    expect(result).toBe(16);
+});
+test('Calculator finding square root of a number', () => {
+    let result = Calculator.SquareRT(4,null);
+    expect(result).toBe(2);
+});
+// test('Calculator adding to calculations', () => {
+//     let result = Calculator.Square(4,null);
+//     let calculation = Calculator.Calculations
+//     calculation.forEach(function(calc) {
+//         console.log(calc.GetResults())
+//     });
 

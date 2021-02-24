@@ -1,30 +1,30 @@
 const Calculation = require('./Operations/models/Calculations');
-const Sum = require('Operations/Add');
-const Difference = require('Operations/Subtract');
-const Quotient = require('Operations/Divide');
-const Product = require('Operations/Multiply');
+const Add = require('Operations/Add');
+const Subtract = require('Operations/Subtract');
+const Multiply = require('Operations/Multiply');
+const Divide = require('Operations/Divide');
 const Square = require('Operations/Square');
 const SquareRT = require('Operations/SquareRT');
 
 class Calculator {
     static Calculations = []
-    static Sum(a,b) {
-        let calculation = new Calculation(a,b,Sum);
+    static Add(a,b) {
+        let calculation = new Calculation(a,b,Add);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Difference(a,b) {
-        let calculation = new Calculation(a,b,Difference);
+    static Subtract(a,b) {
+        let calculation = new Calculation(a,b,Subtract);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Product(a,b) {
-        let calculation = new Calculation(a,b,Product);
+    static Multiply(a,b) {
+        let calculation = new Calculation(a,b,Multiply);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-    static Quotient(a,b) {
-        let calculation = new Calculation(a,b,Quotient);
+    static Divide(a,b) {
+        let calculation = new Calculation(a,b,Divide);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
@@ -38,7 +38,5 @@ class Calculator {
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-
-
-
 }
+module.exports = Calculator;

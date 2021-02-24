@@ -1,40 +1,39 @@
 const Calculation = require('../src/Calculator');
-const Sum = require('../src/Operations/Add');
-const Difference = require('../src/Operations/Subtract');
-const Product = require('../src/Operations/Multiply');
-const Quotient = require('../src/Operations/Divide');
+const Add = require('../src/Operations/Add');
+const Subtract = require('../src/Operations/Subtract');
+const Multiply = require('../src/Operations/Multiply');
+const Divide = require('../src/Operations/Divide');
 const Square = require('../src/Operations/Square')
-const Sqrt = require('../src/Operations/SquareRT')
+const SquareRT = require('../src/Operations/SquareRT')
 
-test('Test of Calculation Instantiation', () => {
-    //I need to test the instantiation of the calculation object
-    let op = Sum
-    let calculation = new Calculation(1,2,op);
+test('Test Calculation Instantiation', () => {
+    let calculation = new Calculation(1,2,Add);
     expect(calculation.a).toBe(1);
     expect(calculation.b).toBe(2);
-    expect(calculation.op).toBe(op);
+    expect(calculation.op).toBe(Add);
 });
+
 test('Test Get results for Sum function', () => {
-    //I need to test the get results function
-    let op = Sum;
-    let calculation = new Calculation(1,2,op);
-    expect(calculation.GetResults()).toBe(3);
+    let calculation = new Calculation(4,2, Add);
+    expect(calculation.GetResults()).toBe(6);
 });
-test('Test Get results for Difference  function', () => {
-    //I need to test the get results function
-    let op = Difference;
-    let calculation = new Calculation(1,2,op);
-    expect(calculation.GetResults()).toBe(-1);
-});
-test('Test Get results for Product  function', () => {
-    //I need to test the get results function
-    let op = Product;
-    let calculation = new Calculation(1,2,op);
+test('Test Get results for Difference function', () => {
+    let calculation = new Calculation(4,2, Subtract);
     expect(calculation.GetResults()).toBe(2);
 });
-test('Test Get results for Quotient  function', () => {
-    //I need to test the get results function
-    let op = Quotient;
-    let calculation = new Calculation(1,2,op);
-    expect(calculation.GetResults()).toBe(.5);
+test('Test Get results for Product function', () => {
+    let calculation = new Calculation(4,2, Multiply);
+    expect(calculation.GetResults()).toBe(8);
+});
+test('Test Get results for Quotient function', () => {
+    let calculation = new Calculation(4,2, Divide);
+    expect(calculation.GetResults()).toBe(2);
+});
+test('Test Get results for Square function', () => {
+    let calculation = new Calculation(4, null, Square);
+    expect(calculation.GetResults()).toBe(16);
+});
+test('Test Get results for squareRoot function', () => {
+    let calculation = new Calculation(4, null, SquareRT);
+    expect(calculation.GetResults()).toBe(2);
 });
