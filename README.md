@@ -146,7 +146,7 @@ The Decorator design pattern extends an object's behavorial dynamically. The pat
 ## 3. Behavorial Design Pattern
 **Chain of Responsibilities**
 
-Chain of Responsibilites is a behavorial desing pattern ususally used in logger functions or HTTP request. The validation is used to validate request. 
+Chain of Responsibilites is a behavorial desing pattern ususally used in logger functions or HTTP request. The validation is used to validate request. The Pattern is where the application passes request along a chain of handlers. Once the request is reached each handler decides to process the request or to pass it to the next handler in the chain.
 
     var Request = function(amount) {
         this.amount = amount;
