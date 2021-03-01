@@ -65,36 +65,14 @@ Entities must depend on abstractions, not on concretions. It states that the hig
 
 # OOP Design Patterns
   There are 3 diffrent types of Design Patterns are 
-  </n>Creational
-  Behaviorial
-  Structual
+  - Creational
+  - Behaviorial
+  - Structual
   1. Creational Design Pattern
 **Singelton Pattern**
 
 The Singleton Pattern defines a getInstance operation which exposes the unique instance which is accessed by the clients. getInstance() is is responsible for creating its class unique instance in case it is not created yet and to return that instance.
 
-var Singleton = (function () {
-    var instance;
-    
-  function createInstance() {
-        var object = new Object("I am the instance");
-        return object;
-    }
-    return {
-        getInstance: function () {
-            if (!instance) {
-                instance = createInstance();
-            }
-            return instance;
-        }
-    };
-})();
- 
-function run() {
-    var instance1 = Singleton.getInstance();
-    var instance2 = Singleton.getInstance();
-    alert("Same instance? " + (instance1 === instance2));  
-}
 
 2. Behavorial Design Pattern
 **Chain of Responsibilities**
