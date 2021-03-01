@@ -63,19 +63,19 @@ Entities must depend on abstractions, not on concretions. It states that the hig
 4. I stand for Interfacev Segregation Principle
 5. D stands for Dependency Inverstion Principle
 
-### OOP Design Patterns
+# OOP Design Patterns
   There are 3 diffrent types of Design Patterns are 
   - Creational
   - Behaviorial
   - Structual
-# 1. Creational Design Pattern
+## 1. Creational Design Pattern
  **Singelton Pattern**
 
 The Singleton Pattern defines a getInstance operation which exposes the unique instance which is accessed by the clients. getInstance() is is responsible for creating its class unique instance in case it is not created yet and to return that instance. It is a way of creating a single object that is shared amongst a bunch of diffrent resources through the application. This is done without haveing to recreate the object or lose any information inside it.
-
-var Singleton = (function () {
-    var instance;
- 
+  
+    var Singleton = (function () {
+      var instance:
+      
     function createInstance() {
         var object = new Object("I am the instance");
         return object;
@@ -88,26 +88,99 @@ var Singleton = (function () {
             }
             return instance;
         }
-    };
-})();
- 
-function run() {
+    };})();
+    function run() {
  
     var instance1 = Singleton.getInstance();
     var instance2 = Singleton.getInstance();
  
-    alert("Same instance? " + (instance1 === instance2));  
-}
+    alert("Same instance? " + (instance1 === instance2));  }
 
-# 2. Behavorial Design Pattern
-**Chain of Responsibilities**
-
-Chain of Responsibilites is a behavorial desing pattern ususally used in logger functions or HTTP request. The validation is used to validate request, 
-
-
-# 3. Structual Design Pattern
+## 2. Structual Design Pattern
 **Decorator**
 
-The decorator design pattern
+The Decorator design pattern extends an object's behavorial dynamically. The pattern is useful when you want to allow objects to have diffrent options. 
+
+    var User = function(name) {
+      this.name = name;
+ 
+      this.say = function() {
+        log.add("User: " + this.name);
+    };
+    }
+ 
+    var DecoratedUser = function(user, street, city) {
+      this.user = user;
+      this.name = user.name;  // ensures interface stays the same
+      this.street = street;
+      this.city = city;
+ 
+      this.say = function() {
+        log.add("Decorated User: " + this.name + ", " +
+                   this.street + ", " + this.city);
+    };
+    }
+ 
+    // logging helper
+ 
+    var log = (function() {
+     var log = "";
+ 
+    return {
+        add: function(msg) { log += msg + "\n"; },
+        show: function() { alert(log); log = ""; }
+    }
+    })();
+ 
+    function run() {
+ 
+      var user = new User("Kelly");
+      user.say();
+ 
+      var decorated = new DecoratedUser(user, "Broadway", "New York");
+      decorated.say();
+ 
+      log.show();
+    }
+
+## 3. Behavorial Design Pattern
+**Chain of Responsibilities**
+
+Chain of Responsibilites is a behavorial desing pattern ususally used in logger functions or HTTP request. The validation is used to validate request. 
+
+    var Request = function(amount) {
+        this.amount = amount;
+        log.add("Requested: $" + amount + "\n");
+    }
+ 
+    Request.prototype = {
+        get: function(bill) {
+            var count = Math.floor(this.amount / bill);
+            this.amount -= count * bill;
+            log.add("Dispense " + count + " $" + bill + " bills");
+        return this;
+      }
+    }
+ 
+    // log helper 
+ 
+    var log = (function() {
+        var log = "";
+ 
+        return {
+            add: function(msg) { log += msg + "\n"; },
+            show: function() { alert(log); log = ""; }
+      }
+    })();
+ 
+    function run() {
+      var request = new Request(378);
+ 
+      request.get(100).get(50).get(20).get(10).get(5).get(1);
+ 
+      log.show();
+    }
+
+
 
 
