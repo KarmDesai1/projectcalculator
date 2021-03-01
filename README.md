@@ -8,7 +8,7 @@ Step 2
 <a href='https://coveralls.io/github/KarmDesai1/projectcalculator?branch=master'><img src='https://coveralls.io/repos/github/KarmDesai1/projectcalculator/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 
-**OOP Design Patterns**
+#OOP Design Patterns
 Builder Pattern
 $ Basic Design Patterns
 1. **Encapsulation** 
@@ -48,20 +48,18 @@ public void print(Collection<String> collection) {
     }
 }
 # SOLID principles that are basic pillars of Object-Oriented Programming
-1.S stands for Single Responsible Priniple
-    1 line of code
-      computers same code
-        no reputs
+1.S stands for Single Responsible Priniple 
+1 line of code, computers same code, no reputs
 2.O stands for Open closed principle
 3.L stands for Likov Subsitiution Principle
 4.I stand for Interfacev Segregation Principle
 5.D stands for Dependency Inverstion Principle
-**OOP Design Patterns**
+#OOP Design Patterns
   There are 3 diffrent types of Design Patterns are 
   Creational
   Behaviorial
   Structual
-1. Creational Design Pattern
+  1. Creational Design Pattern
 **Singelton Pattern**
 
 The Singleton Pattern defines a getInstance operation which exposes the unique instance which is accessed by the clients. getInstance() is is responsible for creating its class unique instance in case it is not created yet and to return that instance.
