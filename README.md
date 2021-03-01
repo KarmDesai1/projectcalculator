@@ -71,7 +71,7 @@ Entities must depend on abstractions, not on concretions. It states that the hig
 ## 1. Creational Design Pattern
  **Singelton Pattern**
 
-The Singleton Pattern defines a getInstance operation which exposes the unique instance which is accessed by the clients. getInstance() is is responsible for creating its class unique instance in case it is not created yet and to return that instance. It is a way of creating a single object that is shared amongst a bunch of diffrent resources through the application. This is done without haveing to recreate the object or lose any information inside it.
+The Singleton Pattern uses a getInstance function which helps the client access the object. The getInstance() is is responsible for creating its class unique instance in case it is not created yet and to return that instance. It is a way of creating a single object that is shared amongst a bunch of diffrent resources through the application. This is done without haveing to recreate the object or lose any information inside it.
   
     var Singleton = (function () {
       var instance:
@@ -99,7 +99,7 @@ The Singleton Pattern defines a getInstance operation which exposes the unique i
 ## 2. Structual Design Pattern
 **Decorator**
 
-The Decorator design pattern extends an object's behavorial dynamically. The pattern is useful when you want to allow objects to have diffrent options. 
+The Decorator design pattern extends an object's behavorial dynamically. The pattern is useful when you want to allow objects to have diffrent options. Several decorators can add or overwrite the functionality to the original object. 
 
     var User = function(name) {
       this.name = name;
