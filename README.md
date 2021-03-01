@@ -47,7 +47,7 @@ public void print(Collection<String> collection) {
         System.out.println("s = " + s);
     }
 }
-**SOLID principles that are basic pillars of Object-Oriented Programming**
+# SOLID principles that are basic pillars of Object-Oriented Programming
 1.S stands for Single Responsible Priniple
     1 line of code
       computers same code
