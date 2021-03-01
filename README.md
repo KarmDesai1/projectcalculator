@@ -8,7 +8,7 @@ Step 2
 <a href='https://coveralls.io/github/KarmDesai1/projectcalculator?branch=master'><img src='https://coveralls.io/repos/github/KarmDesai1/projectcalculator/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 
-#OOP Design Patterns
+# OOP Design Patterns
 Builder Pattern
 $ Basic Design Patterns
 1. **Encapsulation** 
@@ -54,9 +54,10 @@ public void print(Collection<String> collection) {
 3.L stands for Likov Subsitiution Principle
 4.I stand for Interfacev Segregation Principle
 5.D stands for Dependency Inverstion Principle
-#OOP Design Patterns
+
+# OOP Design Patterns
   There are 3 diffrent types of Design Patterns are 
-  Creational
+  </n>Creational
   Behaviorial
   Structual
   1. Creational Design Pattern
