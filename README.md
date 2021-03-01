@@ -47,7 +47,7 @@ public void print(Collection<String> collection) {
         System.out.println("s = " + s);
     }
 }
-****SOLID principles that are basic pillars of Object-Oriented Programming****
+**SOLID principles that are basic pillars of Object-Oriented Programming**
 1.S stands for Single Responsible Priniple
     1 line of code
       computers same code
@@ -56,7 +56,50 @@ public void print(Collection<String> collection) {
 3.L stands for Likov Subsitiution Principle
 4.I stand for Interfacev Segregation Principle
 5.D stands for Dependency Inverstion Principle
+**OOP Design Patterns**
+  There are 3 diffrent types of Design Patterns are 
+  Creational
+  Behaviorial
+  Structual
+1. Creational Design Pattern
+**Singelton Pattern**
+
+The Singleton Pattern defines a getInstance operation which exposes the unique instance which is accessed by the clients. getInstance() is is responsible for creating its class unique instance in case it is not created yet and to return that instance.
+
+var Singleton = (function () {
+    var instance;
+ 
+    function createInstance() {
+        var object = new Object("I am the instance");
+        return object;
+    }
+ 
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    };
+})();
+ 
+function run() {
+ 
+    var instance1 = Singleton.getInstance();
+    var instance2 = Singleton.getInstance();
+ 
+    alert("Same instance? " + (instance1 === instance2));  
+}
+2. Behavorial Design Pattern
+**Chain of Responsibilities**
+
+Chain of Responsibilites is a behavorial desing pattern ususally used in logger functions or HTTP request. The validation is used to validate request, 
 
 
+3. Structual Design Pattern
+**Decorator**
+
+The decorator design pattern
 
 
